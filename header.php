@@ -19,7 +19,7 @@
             <div class="page-wrapper">
                 <button class="nav__open"><?php echo file_get_contents("images/menu.svg"); ?></button>
                 <div class="logo">
-                    <a href="">Loo</a>
+                    <a href=""><?php echo file_get_contents("images/medical.svg"); ?></a>
                 </div>
                 <div class="nav__wrapper">
                     <div class="nav__wrapper-inner">
