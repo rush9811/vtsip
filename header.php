@@ -7,7 +7,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
-
 <body>
     <header class="header">
         <div class="header__top">
@@ -19,7 +18,7 @@
             <div class="page-wrapper">
                 <button class="nav__open"><?php echo file_get_contents("images/menu.svg"); ?></button>
                 <div class="logo">
-                    <a href="">Loo</a>
+                    <a href="">Logo</a>
                 </div>
                 <div class="nav__wrapper">
                     <div class="nav__wrapper-inner">
