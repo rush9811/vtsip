@@ -17,85 +17,85 @@ function CheckData()
     if(first_name == "" && last_name == ""  && username == "" && password  == "" && password2 == "" && email == ""
         && phone == "" && address == "" && city == "")
     {
-        $("errfirstname").innerText = "Add your first name";
+        $("errfirstname").innerText = "Adja meg a Keresztnevét!";
         $("errfirstname").style.color = "#f00";
         document.querySelector(".fn").style.borderColor = "#f00";
-        $("errlastname").innerText = "Add your last name";
+        $("errlastname").innerText = "Adja meg a Vezetéknevét!";
         $("errlastname").style.color = "#f00";
         document.querySelector(".ln").style.borderColor = "#f00";
-        $("errusername").innerText = "Add your username";
+        $("errusername").innerText = "Adja meg a felhasználónevét!";
         $("errusername").style.color = "#f00";
         document.querySelector(".username").style.borderColor = "#f00";
-        $("errpassword").innerText = "Add your password";
+        $("errpassword").innerText = "Adja meg a jelszavát!";
         $("errpassword").style.color = "#f00";
         document.querySelector(".password").style.borderColor = "#f00";
-        $("errpassword2").innerText = "Confirme your password";
+        $("errpassword2").innerText = "Adja meg a jelszavát mégegyszer!";
         $("errpassword2").style.color = "#f00";
         document.querySelector(".password2").style.borderColor = "#f00";
-        $("erremail").innerText = "Add your email";
+        $("erremail").innerText = "Adja meg az email cimét!";
         $("erremail").style.color = "#f00";
         document.querySelector(".email").style.borderColor = "#f00";
-        $("errphone").innerText = "Add your phone number";
+        $("errphone").innerText = "Adja meg a telefonszámát!";
         $("errphone").style.color = "#f00";
         document.querySelector(".phone").style.borderColor = "#f00";
-        $("erraddress").innerText = "Add your address";
+        $("erraddress").innerText = "Adja meg a cimét!";
         $("erraddress").style.color = "#f00";
         document.querySelector(".address").style.borderColor = "#f00";
-        $("errcity").innerText = "Add your city";
+        $("errcity").innerText = "Adja meg a helysége nevét ahol lakik!";
         $("errcity").style.color = "#f00";
         document.querySelector(".city").style.borderColor = "#f00";
         return false;
     }
     if(first_name == "") {
-        $("errfirstname").innerText = "Add your first name";
+        $("errfirstname").innerText = "Adja meg a Keresztnevét!";
         $("errfirstname").style.color = "red";
         document.querySelector(".fn").style.borderColor = "#f00";
         return false;
     }
     else if(last_name == "") {
-        $("errlastname").innerText = "Add your last name";
+        $("errlastname").innerText = "Adja meg a Vezetéknevét!";
         $("errlastname").style.color = "red";
         document.querySelector(".ln").style.borderColor = "#f00";
         return false;
     }
     else if(username == "") {
-        $("errusername").innerText = "Add your username";
+        $("errusername").innerText = "Adja meg a felhasználónevét!";
         $("errusername").style.color = "red";
         document.querySelector(".username").style.borderColor = "#f00";
         return false;
     }
     else if(password == "") {
-        $("errpassword").innerText = "Add your password";
+        $("errpassword").innerText = "Adja meg a jelszavát!";
         $("errpassword").style.color = "red";
         document.querySelector(".password").style.borderColor = "#f00";
         return false;
     }
     else if(password2 == "") {
-        $("errpassword2").innerText = "Confirme your password";
+        $("errpassword2").innerText = "Adja meg a jelszavát mégegyszer!";
         $("errpassword2").style.color = "red";
         document.querySelector(".password2").style.borderColor = "#f00";
         return false;
     }
     else if(email == "") {
-        $("erremail").innerText = "Add your email";
+        $("erremail").innerText = "Adja meg az email cimét!";
         $("erremail").style.color = "red";
         document.querySelector(".email").style.borderColor = "#f00";
         return false;
     }
     else if(phone == "") {
-        $("errphone").innerText = "Add your phone number";
+        $("errphone").innerText = "Adja meg a telefonszámát!";
         $("errphone").style.color = "red";
         document.querySelector(".phone").style.borderColor = "#f00";
         return false;
     }
     else if(address == "") {
-        $("erraddress").innerText = "Add your address";
+        $("erraddress").innerText = "Adja meg a cimét!";
         $("erraddress").style.color = "red";
         document.querySelector(".address").style.borderColor = "#f00";
         return false;
     }
     else if(city == "") {
-        $("errcity").innerText = "Add your city";
+        $("errcity").innerText = "Adja meg a helysége nevét ahol lakik!";
         $("errcity").style.color = "red";
         document.querySelector(".city").style.borderColor = "#f00";
         return false;
