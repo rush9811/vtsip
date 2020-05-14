@@ -13,49 +13,49 @@ else
     $p = "";
 
 if ($p == "1")
-    echo "Firstname required!";
+    echo "<span style='color: red'>Adja meg a Keresztnevét!</span>";
 if ($p == "2")
-    echo "Lastname required!";
+    echo "<span style='color: red'>Adja meg a Vezetéknevét!</span>";
 if ($p == "3")
-    echo "Username required!";
+    echo "<span style='color: red'>Adja meg a felhasználónevét!</span>";
 if ($p == "4")
-    echo "Password required!";
+    echo "<span style='color: red'>Adja meg a jelszavát!</span>";
 if ($p == "5")
-    echo "Verification password required!";
+    echo "<span style='color: red'>Adja meg a jelszavát mégegyszer!</span>";
 if ($p == "6")
-    echo "Email required!";
+    echo "<span style='color: red'>Adja meg az email cimét!</span>";
 if ($p == "7")
-    echo "Phone required!";
+    echo "<span style='color: red'>Adja meg a telefonszámát!</span>";
 if ($p == "8")
-    echo "Address required!";
+    echo "<span style='color: red'>Adja meg a cimét!</span>";
 if ($p == "9")
-    echo "City required!";
+    echo "<span style='color: red'>Adja meg a helysége nevét ahol lakik!</span>";
 if ($p == "10")
-    echo "Error in firstname field!";
+    echo "<span style='color: red'>Ne használjon speciális karaktereket és számokat a Keresztnevében!</span>";
 if ($p == "11")
-    echo "Error in Lastname field!";
+    echo "<span style='color: red'>Ne használjon speciális karaktereket és számokat a Vezetéknevében!</span>";
 if ($p == "12")
-    echo "Error in username field!";
+    echo "<span style='color: red'>Ne használjon speciális karaktereket a felhasználónevében!</span>";
 if ($p == "13")
-    echo "Error in password field!";
+    echo "<span style='color: red'>A megadott két jelszó nem egyezik meg!</span>";
 if ($p == "14")
-    echo "Error in phone field!";
+    echo "<span style='color: red'>Ne használjon speciális karaktereket és betűket a telefonszámban!</span>";
 if ($p == "15")
-    echo "Error in city field!";
+    echo "<span style='color: red'>Ne használjon speciális karaktereket és számokat a helységnévben!</span>";
 if ($p == "16")
-    echo "This email or username already exist! ";
+    echo "<span style='color: red'>A megadott email cim vagy felhasználónév már létezik!</span>";
 if ($p == "17")
-    echo "<span style='color: green'>You are registered! Verify your account via email link.</span> ";
+    echo "<span style='color: green'>A regisztráció sikeres!</span> ";
 if ($p == "18")
-    echo "Something went wrong! Please try again! ";
+    echo "<span style='color: red'>Hiba történt az adatok bevitelekor!</span>";
 if ($p == "19")
-    echo "Info Required!";
+    echo "<span style='color: red'>Adjon meg pár infót magáról(pld tanulmányok,tapasztalat)!</span>";
 if ($p == "20")
-    echo "Language Required!";
+    echo "<span style='color: red'>Adja meg a beszélt nyelveit!</span>";
 if ($p == "21")
-    echo "Don't use special characters in info field!";
+    echo "<span style='color: red'>Ne használjon speciális karaktereket az infó mezőben!</span>";
 if ($p == "22")
-    echo "Don't use special characters and numbers in language field!";
+    echo "<span style='color: red'>Ne használjon speciális karaktereket és számokat a nyelvek mezőben!</span>";
 ?>
 
 <form id="data" method="post" onsubmit="return CheckData3()" onkeyup="CheckData4()">
@@ -77,28 +77,28 @@ if ($p == "22")
     <span class="error" id="errpassword"> </span>
     <br><br>
     <label for="password2">Jelszó megerősitése:</label>
-    <input type="password" name="password2" class="password2" id="password2" maxlength="15" size="15" placeholder="Jelszó megerősitése:" autofocus>
+    <input type="password" name="password2" class="password2" id="password2" minlength="8" maxlength="15" size="15" placeholder="Jelszó megerősitése" autofocus>
     <span class="error" id="errpassword2"> </span>
     <br><br>
-    <label for="email">Email:</label>
-    <input type="email" name="email" class="email" id="email"  maxlength="40" size="15" placeholder="Email:" autofocus>
+    <label for="email">Email cim:</label>
+    <input type="email" name="email" class="email" id="email"  maxlength="40" size="15" placeholder="Email" autofocus>
     <span class="error" id="erremail"> </span>
     <br><br>
     <label for="phone">Telefonszám:</label>
-    <input type="text" name="phone" class="phone"  id="phone" maxlength="15" size="15" placeholder="Telefonszám:" autofocus>
+    <input type="text" name="phone" class="phone"  id="phone" minlength="6" maxlength="15" size="15" placeholder="Telefonszám" autofocus>
     <span class="error" id="errphone"> </span>
     <br><br>
     <label for="address">Utcanév,Házszám:</label>
-    <input type="text" name="address" class="address"  id="address" maxlength="40" size="15" placeholder="Utcanév,Házszám:" autofocus>
+    <input type="text" name="address" class="address"  id="address" maxlength="40" size="15" placeholder="Utcanév,Házszám" autofocus>
     <span class="error" id="erraddress"> </span>
     <br><br>
-    <label for="city">Város:</label>
-    <input type="text" name="city" class="city"  id="city" maxlength="30" size="15" placeholder="Város" autofocus>
+    <label for="city">Helységnév:</label>
+    <input type="text" name="city" class="city"  id="city" maxlength="30" size="15" placeholder="Helységnév" autofocus>
     <span class="error" id="errcity"> </span>
     <br><br>
     <label for="info">Info:</label><br>
-    <textarea id="info" class="info" rows="4" cols="50"></textarea>
-    <span class="error" id="errinfo"> </span><br>
+    <textarea id="info" class="info" rows="4" cols="50"></textarea><br>
+    <span class="error" id="errinfo"> </span><br><br>
     <label for="languages">Beszélt nyelvek:</label>
     <input type="text" name="languages" class="languages"  id="languages" maxlength="20" size="15" placeholder="Beszélt nyelvek" autofocus>
     <span class="error" id="errlanguages"> </span><br><br>
@@ -118,8 +118,7 @@ if ($p == "22")
     <input type="checkbox" id="spec7" name="szájsebészeti_műtétek" value="1"><br><br>
     <label for="spec7">Gyökérkezelés:</label>
     <input type="checkbox" id="spec8" name="gyökérkezelés" value="1"><br><br>
-    <input type="submit" name="submit" value="Send">
-    <input type="reset"  name="rg" value="Cancel">
+    <button type="submit" name="submit" value="Send">Küld</button>
 </form>
 </body>
 </html>
