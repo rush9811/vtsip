@@ -1,8 +1,14 @@
 @import "sanitize";
+@import "fonts";
+
 /*------------------------colors-----------------------------------*/
 $blue: #00bbd3;
+$blue-dark: #299cac;
 $black: #000;
 $white: #fff;
+$gray9: #999;
+$grayE: #eee;
+$red: #ff0000;
 
 /*-------------------------global----------------------------------*/
 
@@ -32,6 +38,7 @@ body {
   &.overflow {
     overflow: hidden;
   }
+  font-family: "Roboto";
 }
 /*-------------------------particle----------------------------------*/
 
@@ -52,7 +59,7 @@ body {
   width: 100%;
   z-index: 10;
   background: $white;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid $grayE;
   &__top {
     background: $blue;
     .page-wrapper {
@@ -216,19 +223,23 @@ body {
     justify-content: center;
     width: 100%;
     background: $white;
-    box-shadow: 5px 7px 7px 2px #999;
+    box-shadow: 10px 10px 10px -7px $gray9;
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid #eee;
+    border: 1px solid $grayE;
     input {
       border: none;
-      border-bottom: 2px solid #999;
+      border-bottom: 2px solid $gray9;
       border-radius: 5px;
       padding: 5px;
       width: 100%;
       outline: none;
+      transition: all 0.3s ease;
       &:focus {
         border-color: $blue;
+      }
+      &.error {
+        border-color: $red;
       }
     }
     button {
@@ -237,9 +248,15 @@ body {
       background: $blue;
       margin: 10px auto 0;
       border-radius: 10px;
+      font-weight: 700;
       color: $white;
       border: none;
       cursor: pointer;
+      transition: all 0.3s ease;
+      &:hover {
+        background: $blue-dark;
+      }
+      outline: none;
     }
   }
 }
