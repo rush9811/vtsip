@@ -48,7 +48,7 @@ include 'header.php';
             if ($p == "18")
                 echo "<span style='color: red'>Hiba történt az adatok bevitelekor!</span>";
             ?>
-            <form class="registration__form" id="data" method="post" onsubmit="return CheckData()" onkeyup="CheckData2()">
+            <form class="registration__form js-registration" id="data" method="post">
                 <label for="fn">Keresztnév:</label><span class="error" id="errfirstname"> </span>
                 <input type="text" name="fn" class="fn" id="fn" maxlength="30" size="15" placeholder="Keresztnév" autofocus>
                 <label for="ln">Vezetéknév:</label><span class="error" id="errlastname"> </span>
@@ -67,7 +67,7 @@ include 'header.php';
                 <input type="text" name="address" class="address" id="address" maxlength="40" size="15" placeholder="Utcanév,Házszám" autofocus>
                 <label for="city">Helységnév:</label><span class="error" id="errcity"> </span>
                 <input type="text" name="city" class="city" id="city" maxlength="30" size="15" placeholder="Helységnév" autofocus>
-                <button type="submit" name="submit" value="Send">Küld</button>
+                <button type="submit" name="submit" value="Send">Küldés</button>
             </form>
         </div>
     </div>

@@ -578,6 +578,24 @@ textarea,
   cursor: default;
 }
 
+/* roboto-regular - latin-ext_latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto"), local("Roboto-Regular"), url("../fonts/roboto-v20-latin-ext_latin-regular.woff2") format("woff2"), url("../fonts/roboto-v20-latin-ext_latin-regular.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* roboto-700 - latin-ext_latin */
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Roboto Bold"), local("Roboto-Bold"), url("../fonts/roboto-v20-latin-ext_latin-700.woff2") format("woff2"), url("../fonts/roboto-v20-latin-ext_latin-700.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 /*------------------------colors-----------------------------------*/
 /*-------------------------global----------------------------------*/
 * {
@@ -607,6 +625,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   padding-top: 89px;
+  font-family: "Roboto";
 }
 
 body.overflow {
@@ -863,8 +882,8 @@ body.overflow {
           justify-content: center;
   width: 100%;
   background: #fff;
-  -webkit-box-shadow: 5px 7px 7px 2px #999;
-          box-shadow: 5px 7px 7px 2px #999;
+  -webkit-box-shadow: 10px 10px 10px -7px #999;
+          box-shadow: 10px 10px 10px -7px #999;
   padding: 20px;
   border-radius: 10px;
   border: 1px solid #eee;
@@ -877,10 +896,16 @@ body.overflow {
   padding: 5px;
   width: 100%;
   outline: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .registration__form input:focus {
   border-color: #00bbd3;
+}
+
+.registration__form input.error {
+  border-color: #ff0000;
 }
 
 .registration__form button {
@@ -891,8 +916,16 @@ body.overflow {
   background: #00bbd3;
   margin: 10px auto 0;
   border-radius: 10px;
+  font-weight: 700;
   color: #fff;
   border: none;
   cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.registration__form button:hover {
+  background: #299cac;
 }
 /*# sourceMappingURL=main.css.map */
