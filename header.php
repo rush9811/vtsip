@@ -12,7 +12,7 @@
     <header class="header">
         <div class="header__top">
             <div class="page-wrapper">
-                <div class="text"> Telefonszám vagy valami faszság</div>
+                <div class="text"> Telefonszám</div>
             </div>
         </div>
         <div class="header__bottom">
