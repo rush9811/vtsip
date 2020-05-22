@@ -22,7 +22,6 @@ $spec7=$_POST['szájsebészeti_műtétek'];
 $spec8=$_POST['gyökérkezelés'];
 
 $num = 0;
-// checking for filled parts
 if (empty($_POST['first_name'])) {
     header("Location:dentistregistration.php?p=1");
     $num++;
@@ -59,29 +58,53 @@ if (empty($_POST['first_name'])) {
       header("Location:dentistregistration.php?p=20");
       $num++;
   }
-  else if (empty($_POST['fogtömés'])) {
+  if ($spec1=='false') {
       $spec1=0;
   }
-  else if (empty($_POST['fogfehérités'])) {
+  else{
+      $spec1=1;
+  }
+  if ($spec2=='false') {
       $spec2=0;
   }
-  else if (empty($_POST['foghúzás'])) {
+  else{
+      $spec2=1;
+  }
+  if ($spec3=='false') {
       $spec3=0;
   }
-  else if (empty($_POST['fogkő_eltávolitás'])) {
+  else{
+      $spec3=1;
+  }
+  if ($spec4=='false') {
       $spec4=0;
   }
-  else if (empty($_POST['lézerfogászat'])) {
+  else{
+      $spec4=1;
+  }
+  if ($spec5=='false') {
       $spec5=0;
   }
-  else if (empty($_POST['lézersebészet'])) {
+  else{
+      $spec5=1;
+  }
+  if ($spec6=='false') {
       $spec6=0;
   }
-  else if (empty($_POST['szájsebészeti_műtétek'])) {
+  else{
+      $spec6=1;
+  }
+  if ($spec7=='false') {
       $spec7=0;
   }
-  else if (empty($_POST['gyökérkezelés'])) {
+  else{
+      $spec7=1;
+  }
+  if ($spec8=='false') {
       $spec8=0;
+  }
+  else{
+      $spec8=1;
   }
 
 if ($num == 0) {
@@ -133,7 +156,7 @@ if ($num == 0) {
         $phone = strip_tags($phone);
 
     } else {
-        header("Location:dentistregistration.php?p=14");
+         header("Location:dentistregistration.php?p=14");
         $num++;
     }
 
@@ -147,7 +170,7 @@ if ($num == 0) {
         $city = ucfirst($city);
 
     } else {
-        header("Location:dentistregistration.php?p=15");
+         header("Location:dentistregistration.php?p=15");
         $num++;
     }
 
@@ -155,16 +178,16 @@ if ($num == 0) {
         $info = strip_tags($info);
 
     } else {
-        header("Location:dentistregistration.php?p=21");
+         header("Location:dentistregistration.php?p=21");
         $num++;
     }
 
-    if (!preg_match('/[0-9]/', $languages) and !preg_match('/[\/^£$%&*()}{@#~?><>,|=_+¬-]/', $languages) and preg_match('/[A-Za-z]/', $languages)) {
+    if (!preg_match('/[0-9]/', $languages) and !preg_match('/[\/^£$%&*()}{@#~?><>|=_+¬-]/', $languages) and preg_match('/[A-Za-z]/', $languages)) {
         $languages = strip_tags($languages);
         $languages = strtolower($languages);
         $firstname = ucfirst($firstname);
     } else {
-        header("Location:dentistregistration.php?p=22");
+         header("Location:dentistregistration.php?p=22");
         $num++;
     }
 
@@ -184,7 +207,6 @@ if ($num == 0) {
                 }
             }
         }
-        // if not have errors, inserting user in to db
         if ($num == 0) {
             $sql = "INSERT INTO dentists (first_name, last_name,password,email,phone, address,city,user_name,info,languages,fogtömés,fogfehérités,foghúzás,fogkő_eltávolitás,lézerfogászat,lézersebészet,szájsebészeti_műtétek,gyökérkezelés)
 VALUES ('$firstname', '$lastname','$password_decrypt','$email','$phone', '$address', '$city', '$username','$info','$languages','$spec1','$spec2','$spec3','$spec4','$spec5','$spec6','$spec7','$spec8')";

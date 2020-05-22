@@ -74,7 +74,7 @@ if ($p == "22")
     <br><br>
     <label for="password">Jelszó:</label>
     <input type="password" name="password" class="password" id="password" minlength="8" maxlength="15" size="15" placeholder="Jelszó" autofocus>
-    <span class="error" id="errpassword"> </span>
+    <span class="error" id="errpassword"> </span><span class="error" id="errpasswordlength"> </span>
     <br><br>
     <label for="password2">Jelszó megerősitése:</label>
     <input type="password" name="password2" class="password2" id="password2" minlength="8" maxlength="15" size="15" placeholder="Jelszó megerősitése" autofocus>
@@ -85,8 +85,8 @@ if ($p == "22")
     <span class="error" id="erremail"> </span>
     <br><br>
     <label for="phone">Telefonszám:</label>
-    <input type="text" name="phone" class="phone"  id="phone" minlength="6" maxlength="15" size="15" placeholder="Telefonszám" autofocus>
-    <span class="error" id="errphone"> </span>
+    <input type="text" name="phone" class="phone"  id="phone" minlength="9" maxlength="15" size="15" placeholder="Telefonszám" autofocus>
+    <span class="error" id="errphone"> </span><span class="error" id="errphonelength"> </span>
     <br><br>
     <label for="address">Utcanév,Házszám:</label>
     <input type="text" name="address" class="address"  id="address" maxlength="40" size="15" placeholder="Utcanév,Házszám" autofocus>
