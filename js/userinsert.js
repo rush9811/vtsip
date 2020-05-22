@@ -1,8 +1,7 @@
 var $ = function (id) {
     return document.getElementById(id);
 }
-//Beviteli mezők ellenörzése hogy ki vannak-e töltve
-function CheckData3()
+function CheckData()
 {
     var first_name = $("fn").value;
     var last_name = $("ln").value;
@@ -13,10 +12,9 @@ function CheckData3()
     var phone = $("phone").value;
     var address = $("address").value;
     var city = $("city").value;
-    var info = $("info").value;
-    var languages = $("languages").value;
+
     if(first_name == "" && last_name == ""  && username == "" && password  == "" && password2 == "" && email == ""
-        && phone == "" && address == "" && city == "" && info == "" && languages == "" && password.length<8 && phone.length<9)
+        && phone == "" && address == "" && city == "" && password.length<8 && phone.length<9)
     {
         $("errfirstname").innerText = "Adja meg a Keresztnevét!";
         $("errfirstname").style.color = "#f00";
@@ -51,12 +49,6 @@ function CheckData3()
         $("errcity").innerText = "Adja meg a helysége nevét ahol lakik!";
         $("errcity").style.color = "#f00";
         document.querySelector(".city").style.borderColor = "#f00";
-        $("errinfo").innerText = "Adjon meg pár infót magáról(pld tanulmányok,tapasztalat)!";
-        $("errinfo").style.color = "#f00";
-        document.querySelector(".info").style.borderColor = "#f00";
-        $("errlanguages").innerText = "Adja meg a beszélt nyelveit!";
-        $("errlanguages").style.color = "#f00";
-        document.querySelector(".languages").style.borderColor = "#f00";
         return false;
     }
     if(first_name == "") {
@@ -83,7 +75,7 @@ function CheckData3()
         document.querySelector(".password").style.borderColor = "#f00";
         return false;
     }
-    else if(password.length <8) {
+    else if(password.length <8 ) {
         $("errpasswordlength").innerText = "A jelszó minimális hossza 8 karakter!";
         $("errpasswordlength").style.color = "#f00";
         document.querySelector(".password").style.borderColor = "#f00";
@@ -125,23 +117,10 @@ function CheckData3()
         document.querySelector(".city").style.borderColor = "#f00";
         return false;
     }
-    else if(info == "") {
-        $("errinfo").innerText = "Adjon meg pár infót magáról(pld tanulmányok,tapasztalat)!";
-        $("errinfo").style.color = "#f00";
-        document.querySelector(".info").style.borderColor = "#f00";
-        return false;
-    }
-    else if(languages == "") {
-        $("errlanguages").innerText = "Adja meg a beszélt nyelveit!";
-        $("errlanguages").style.color = "#f00";
-        document.querySelector(".languages").style.borderColor = "#f00";
-        return false;
-    }
-
 
 
     if(first_name != "" && last_name != ""  && username != "" && password  != "" && password2 != "" && email != ""
-        && phone != "" && address != "" && city != "" && info != "" && languages != "" && password.length>=8 && phone.length>=9)
+        && phone != "" && address != "" && city != "" && password.length>=8 && phone.length>=9)
     {
         sendData();
         return false;
@@ -149,7 +128,7 @@ function CheckData3()
 }
 
 
-function CheckData4()
+function CheckData2()
 {
     var first_name = $("fn").value;
     var last_name = $("ln").value;
@@ -160,8 +139,7 @@ function CheckData4()
     var phone = $("phone").value;
     var address = $("address").value;
     var city = $("city").value;
-    var info = $("info").value;
-    var languages = $("languages").value;
+
 
     if(first_name != "")
     {
@@ -204,7 +182,7 @@ function CheckData4()
         $("errphone").innerText = "";
         document.querySelector(".phone").removeAttribute("style");
     }
-    if(phone.length >=9)
+    if(phone.length >= 9)
     {
         $("errphonelength").innerText = "";
         document.querySelector(".phone").removeAttribute("style");
@@ -219,19 +197,6 @@ function CheckData4()
         $("errcity").innerText = "";
         document.querySelector(".city").removeAttribute("style");
     }
-    if(info != "")
-    {
-        $("errinfo").innerText = "";
-        document.querySelector(".info").removeAttribute("style");
-
-    }
-    if(languages != "")
-    {
-        $("errlanguages").innerText = "";
-        document.querySelector(".languages").removeAttribute("style");
-
-    }
-
 
 }
 
@@ -259,21 +224,9 @@ function sendData()
     var phone = $("phone").value;
     var address = $("address").value;
     var city = $("city").value;
-    var info = $("info").value;
-    var languages = $("languages").value;
-    var spec1=$("spec1").checked;
-    var spec2=$("spec2").checked;
-    var spec3=$("spec3").checked;
-    var spec4=$("spec4").checked;
-    var spec5=$("spec5").checked;
-    var spec6=$("spec6").checked;
-    var spec7=$("spec7").checked;
-    var spec8=$("spec8").checked;
 
 
-    xmlhttp.open("POST","dentistinsert.php", true);
+    xmlhttp.open("POST","userinsert.php", true);
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-    xmlhttp.send("first_name="+first_name+"&last_name="+last_name+"&username="+username+"&password="+password+"&password2="+password2+"&email="+email+"&phone="+phone+"&address="+address+"&city="+city+"&info="+info+"&languages="+languages+"&fogtömés="+spec1+
-        "&fogfehérités="+spec2+"&foghúzás="+spec3+"&fogkő_eltávolitás="+spec4+"&lézerfogászat="+spec5+"&lézersebészet="+spec6+"&szájsebészeti_műtétek="+spec7+"&gyökérkezelés="+spec8);
+    xmlhttp.send("first_name="+first_name+"&last_name="+last_name+"&username="+username+"&password="+password+"&password2="+password2+"&email="+email+"&phone="+phone+"&address="+address+"&city="+city);
 }
-
